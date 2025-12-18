@@ -1,0 +1,10 @@
+version: '3'
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - "3001:3001"  # 将容器的3001端口映射到宿主机的3001端口
+    volumes:
+      - ./data:/app/data  # 将监控数据持久化保存在当前目录的data文件夹下
